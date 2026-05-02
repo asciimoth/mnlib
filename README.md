@@ -1,4 +1,5 @@
 # mnlib
+[![Go Reference](https://pkg.go.dev/badge/github.com/asciimoth/mnlib.svg)](https://pkg.go.dev/github.com/asciimoth/mnlib)
 
 `mnlib` is a Go library for
 [gonnect ecosystem](https://github.com/asciimoth/gonnect#related-projects)

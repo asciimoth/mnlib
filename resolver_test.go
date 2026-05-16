@@ -13,7 +13,6 @@ import (
 	"time"
 
 	"github.com/asciimoth/gonnect"
-	gerrors "github.com/asciimoth/gonnect/errors"
 	"github.com/miekg/dns"
 )
 
@@ -294,7 +293,7 @@ func TestResolverWithoutFallbackRejectsNonSpecialNames(t *testing.T) {
 		t.Fatalf("LookupHost() error = %#v, want canonical rejectdns not found error", dnsErr)
 	}
 
-	want := gerrors.NoSuchHost("example.com", "rejectdns")
+	want := gonnect.NoSuchHost("example.com", "rejectdns")
 	if dnsErr.Err != want.Err || dnsErr.Server != want.Server || dnsErr.IsNotFound != want.IsNotFound {
 		t.Fatalf("LookupHost() error = %#v, want %#v", dnsErr, want)
 	}
@@ -340,6 +339,7 @@ func startDNSServer(t *testing.T, handler dns.HandlerFunc) dnsServer {
 }
 
 type mapNetwork struct {
+	gonnect.RejectNetwork
 	routes map[string]string
 }
 

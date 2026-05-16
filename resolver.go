@@ -28,7 +28,6 @@ import (
 	"time"
 
 	"github.com/asciimoth/gonnect"
-	greject "github.com/asciimoth/gonnect/reject"
 	"github.com/miekg/dns"
 )
 
@@ -347,7 +346,7 @@ func (r *Resolver) fallback() gonnect.Resolver {
 	if r.Fallback != nil {
 		return r.Fallback
 	}
-	return &greject.Network{}
+	return &gonnect.RejectNetwork{}
 }
 
 func (r *Resolver) timeout() time.Duration {

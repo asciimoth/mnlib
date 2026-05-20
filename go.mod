@@ -3,7 +3,7 @@ module github.com/asciimoth/mnlib
 go 1.25.5
 
 require (
-	github.com/asciimoth/gonnect v0.13.0
+	github.com/asciimoth/gonnect v0.14.0
 	github.com/miekg/dns v1.1.72
 )
 

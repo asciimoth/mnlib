@@ -70,6 +70,7 @@
 
           typos
           commitizen
+          just
         ];
       };
     });
